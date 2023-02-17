@@ -38,7 +38,7 @@ jobs:
       - name: Установка python и настройка окружения
         uses: actions/setup-python@v3
         with:
-          python-version: 3.9
+          python-version: 3.10.4
 
       - name: Установка зависимостей
         run: pip install -r requirements.txt
