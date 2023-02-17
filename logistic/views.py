@@ -16,9 +16,11 @@ class ProductViewSet(ModelViewSet):
     search_fields = ['title', 'description', ]
     pagination_class = LimitOffsetPagination
     # при необходимости добавьте параметры фильтрации
+
     @action(['GET'], detail=False)
     def test(self, request):
         return Response('HELLO')
+
 
 class StockViewSet(ModelViewSet):
     queryset = Stock.objects.all()
