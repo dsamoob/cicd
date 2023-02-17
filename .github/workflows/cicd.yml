@@ -47,7 +47,7 @@ jobs:
         run: flake8 logistic/ --exclude logistic/migrations/
 
       - name: Тестирование
-        run: python manage.py test
+        run: python3 manage.py test
         env:
           SECRET_KEY: ${{ env.SECRET_KEY }}
           DEBUG: "0"
