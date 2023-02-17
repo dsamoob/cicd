@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       SECRET_KEY: ${{ secrets.SECRET_KEY }}
-      DEBUG: "0"
+      DEBUG: ${{ secrets.DEBUG }}
       ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
       DB_ENGINE: ${{ secrets.DB_ENGINE }}
       DB_USER: ${{ secrets.DB_USER }}
