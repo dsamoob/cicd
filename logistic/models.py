@@ -3,14 +3,21 @@ from django.db import models
 
 
 class Product(models.Model):
-    title = models.CharField(max_length=60, unique=True, verbose_name='Название')
-    description = models.TextField(null=True, blank=True, verbose_name='Описание')
+    title = models.CharField(max_length=60,
+                             unique=True,
+                             verbose_name='Название')
+    description = models.TextField(null=True,
+                                   blank=True,
+                                   verbose_name='Описание')
 
     def __str__(self):
         return self.title
 
+
 class Stock(models.Model):
-    address = models.CharField(max_length=200, unique=True, verbose_name='Адрес')
+    address = models.CharField(max_length=200,
+                               unique=True,
+                               verbose_name='Адрес')
     products = models.ManyToManyField(
         Product,
         through='StockProduct',
@@ -19,6 +26,7 @@ class Stock(models.Model):
 
     def __str__(self):
         return self.address
+
 
 class StockProduct(models.Model):
     stock = models.ForeignKey(

@@ -26,4 +26,3 @@ class StockViewSet(ModelViewSet):
     pagination_class = LimitOffsetPagination
 
     # при необходимости добавьте параметры фильтрации
-

@@ -45,7 +45,7 @@ class StockSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         print('update_start: instance', instance)
         print('update_start: validated_data', validated_data)
-        pre_pos = validated_data.get('positions')
+        # pre_pos = validated_data.get('positions')
 
         # for position in pre_pos:
         #     product = position.get('product')
@@ -58,7 +58,6 @@ class StockSerializer(serializers.ModelSerializer):
         #                   'quantity': quantity}
         #     )
         # return stock
-
 
         positions = validated_data.pop('positions')
         stock = super().update(instance, validated_data)
