@@ -45,19 +45,11 @@ jobs:
       - name: Линтинг
         run: flake8 logistic/ --exclude logistic/migrations/
 
-      - name: Деплой
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          script: expect /home/egor/cicd/pull.exp
-
       - name: Тестирование
         run: python manage.py test
         env:
           SECRET_KEY: ${{ env.SECRET_KEY }}
-          DEBUG: "0"
+          DEBUG: False
           ALLOWED_HOSTS: ${{ env.ALLOWED_HOSTS }}
           DB_ENGINE: ${{ env.DB_ENGINE }}
           DB_USER: ${{ env.DB_USER }}
@@ -65,3 +57,11 @@ jobs:
           DB_NAME: ${{ env.DB_NAME }}
           DB_HOST: ${{ env.DB_HOST }}
           DB_PORT: ${{ env.DB_PORT }}
+
+      - name: Деплой
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: expect /home/egor/cicd/pull.exp
