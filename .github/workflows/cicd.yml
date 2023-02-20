@@ -52,7 +52,8 @@ jobs:
           DEBUG: "0"
           ALLOWED_HOSTS: ${{ env.ALLOWED_HOSTS }}
           DB_ENGINE: ${{ env.DB_ENGINE }}
-          POSTGRES_HOST_AUTH_METHOD: "trust"
+          DB_USER: ${{ env.DB_USER }}
+          DB_PASSWORD: ${{ env.DB_PASSWORD }}
           DB_NAME: ${{ env.DB_NAME }}
           DB_HOST: 127.0.0.1
           DB_PORT: 5432
