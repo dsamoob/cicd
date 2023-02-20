@@ -51,10 +51,10 @@ jobs:
           SECRET_KEY: ${{ env.SECRET_KEY }}
           DEBUG: "0"
           ALLOWED_HOSTS: ${{ env.ALLOWED_HOSTS }}
-          DB_ENGINE: ${{ env.DB_ENGINE }}
+          DB_ENGINE: django.db.backends.sqlite3
           DB_USER: runner
           DB_PASSWORD: ${{ env.DB_PASSWORD }}
-          DB_NAME: ${{ env.DB_NAME }}
+          DB_NAME: BASE_DIR / 'db.sqlite3
           DB_HOST: 127.0.0.1
           DB_PORT: 5432
 
