@@ -52,7 +52,7 @@ jobs:
           DEBUG: "0"
           ALLOWED_HOSTS: ${{ env.ALLOWED_HOSTS }}
           DB_ENGINE: ${{ env.DB_ENGINE }}
-          DB_USER: ${{ env.DB_USER }}
+          DB_USER: runner
           DB_PASSWORD: ${{ env.DB_PASSWORD }}
           DB_NAME: ${{ env.DB_NAME }}
           DB_HOST: 127.0.0.1
