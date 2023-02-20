@@ -59,7 +59,7 @@ jobs:
           DB_PORT: 5432
 
       - name: Деплой
-        uses: appleboy/ssh-action@master
+        uses: actions/checkout@v2
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
